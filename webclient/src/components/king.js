@@ -2,7 +2,10 @@ import React from 'react'
 
 function king() {
   return (
-    <div>Hai Hai</div>
+    <div>
+      <h1>Hai This is Shankar</h1>
+      </div>
+    
     
   )
 }
