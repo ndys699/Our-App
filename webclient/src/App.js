@@ -9,7 +9,6 @@ import King from './components/king';
 function App() {
   return (
     <div className="App">
-  
       </div>
   );
 }
