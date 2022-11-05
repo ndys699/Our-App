@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef} from "react"
 
 function king() {
 
@@ -17,15 +17,17 @@ let onSignUp = async ()=>{
 
     fn:firstNameInput.current.value,
     ln:lastNameInput.current.value,
-    gender:genderNameInput.current.value,
+    gender:genderInput.current.value,
     email:emailInput.current.value,
     password:passwordInput.current.value,
   }
 
-let reqOptions ={
+let reqOptions = {
+
   method:"POST",
   headers:myHeaders,
   body:JSON.stringify(dataToSend),
+
 }
 
 let rawData = await fetch("mongodb://localhost:27017",reqOptions)
@@ -62,15 +64,11 @@ console.log(convertedData);
         </div>
         <div>
           <button onClick={()=>{
-
+            onSignUp();
           }}>Sign Up</button>
         </div>
       </form>
-      <h1>This is james bond</h1>
-      <h1>This is Mahiraavana</h1>
-      <h1>This is E-commerce website</h1>
-      <h1>Satish anna laptop got some problem</h1>
-      <h1>We are going to have a party in the evening with sandeep and satish</h1>
+      
       </div>
       
     
