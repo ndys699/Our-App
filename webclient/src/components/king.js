@@ -2,7 +2,8 @@ import React from 'react'
 
 function king() {
   return (
-    <div>Hai</div>
+    <div>Hai Hai</div>
+    
   )
 }
 
