@@ -1,15 +1,10 @@
-import React,{ Component } from "react";
+import React, { Component } from "react";
 
-class NavBar extends Component{
-render(){
-    return (
-    <React.Fragment>
-        <h1>Hello</h1>
-        <p>This is Paragraph</p>
-    </React.Fragment>
-    );
+export default class App extends 
+Component
+{
+  render()
+  {
+     return <div>Hello</div>
+  }
 }
-}
-
-
-export default NavBar;
