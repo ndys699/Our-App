@@ -3,7 +3,7 @@ import React,{Component} from "react";
 export default class MainContent extends Component
 {
 state={pageTitle:"Customers" , customersCount:
-5};
+6};
 
 render(){
     return(
