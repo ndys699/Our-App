@@ -7,3 +7,13 @@
 {
     background-color: rgba(0, 102, 255, 0.726)!important;
 }
+
+.green-highlight{
+    color: #008000;
+    font-size: 40px;
+}
+
+.red-highlight{
+    color: #ff0000;
+    font-size: 25px;
+}
