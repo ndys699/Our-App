@@ -2,18 +2,109 @@ import React,{Component} from "react";
 
 export default class MainContent extends Component
 {
-state={pageTitle:"Customers" , customersCount:
-6};
+state={
+    pageTitle:"Customers" ,
+     customersCount:5,
+     customers:[
+        {
+            id:1,
+            name:"Scott",
+            phone:"123-456",
+            address:{city:"New Delhi"},
+            photo: "https://picsum.photos/id/1010/60"
+        },
+        {
+            id:2,
+            name:"Jones",
+            phone:"998-489",
+            address:{city:"New Jersy"},
+            photo: "https://picsum.photos/id/1011/60"
+        },
+        {
+            id:3,
+            name:"Allen",
+            phone:"778-567",
+            address:{city:"London"},
+            photo: "https://picsum.photos/id/1012/60"
+        },
+        {
+            id:3,
+            name:"Allen",
+            phone:"778-567",
+            address:{city:"Bhutan"},
+            photo: "https://picsum.photos/id/1013/60"
+        },
+        {
+            id:4,
+            name:"James",
+            phone: null,
+            address:{city:"Berlin"},
+            photo: "https://picsum.photos/id/1014/60"
+        },
+        {
+            id:5,
+            name:"John",
+            phone: null,
+            address:{city:"New York"},
+            photo: "https://picsum.photos/id/1015/60"
+        },
+        ],
+};
 
 render(){
     return(
     <div>
         <h4 className="border-bottom m-1 p-1">
             {this.state.pageTitle}
-    <span>
-        {this.state.customersCount}</span>
+    <span className="badgebadge-secondary m-2">
+        {this.state.customersCount}
+        </span>
+        <button className="btn btn-info" onClick={this.onRefreshClick}>Refresh</button>
         </h4>
+        <table className="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Customer Name</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {this.getCustomersRow()}   
+            </tbody>
+
+        </table>
     </div>
     );
 }
+// Executes when user clicks on Refresh button
+onRefreshClick=()=>
+{
+   this.setState({
+    customersCount:7,
+   });
+}
+   getPhoneToRender=(phone)=>{
+    if(phone) return phone ;
+    else
+    {
+    return <div className="bg-warning p-2 text-center">No Phone</div>
+        }
+    }
+
+   getCustomersRow = ()=>{
+    return (this.state.customers.map((cust)=>{
+        return(
+        <tr key={cust.id}>
+        <td> {cust.id} </td>
+        <td><img src={cust.photo} alt="Customer"/></td>
+        <td> {cust.name} </td>
+        <td> {this.getPhoneToRender(cust.phone)} </td>
+        <td> {cust.address.city} </td>
+    </tr>
+        )
+    }));
+   }
 }
