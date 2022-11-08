@@ -15,17 +15,27 @@ export default class ShoppingCart extends Component
         return <div className="contain-fluid">
             <h4>Shopping Cart</h4>
 
-            <div className="row">
-                {this.state.products.map((prod)=>{
-                    return (
-                    <Product 
-                    key={prod.id} 
-                    id={prod.id} 
-                    productName={prod.productName} 
-                    price={prod.price}/>
-                    )
-                })}
+<div className="row">
+{this.state.products.map((prod)=>{
+ return(
+  <Product 
+  key={prod.id} 
+  product={prod} 
+  onIncrement={this.handleIncrement}
+  onDecrement={this.handleDecrement}>
+<button className="btn btn-primary">Buy Now</button>
+</Product>
+ );
+ })}
             </div>
             </div>
     }
+    // render ends here
+    handleIncrement=(product)=>{
+        console.log("handleIncrement",product)
+    };
+
+    handleDecrement=(product)=>{
+        console.log("handleDecrement",product)
+    };
 }
